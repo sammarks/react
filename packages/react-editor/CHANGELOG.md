@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.4](https://github.com/sammarks/react/compare/@sammarks/react-editor@0.0.3...@sammarks/react-editor@0.0.4) (2019-10-23)
+
+
+### Bug Fixes
+
+* add more again ([17aebf4](https://github.com/sammarks/react/commit/17aebf44b35e434a01ed1a4c00b29ffe342896e5))
+
+
+
+
+
 ## 0.0.3 (2019-10-23)
 
 
