@@ -4,7 +4,8 @@
   ],
   "command": {
     "publish": {
-      "conventionalCommits": true
+      "conventionalCommits": true,
+      "message": "chore: publish"
     }
   },
   "version": "independent",
