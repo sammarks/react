@@ -1,0 +1,67 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "build": "lerna run build",
+    "lint": "tslint -t codeFrame 'packages/**/@(src|bin)/*.ts*",
+    "postinstall": "lerna bootstrap --hoist --progress --no-ci",
+    "prebuild": "lerna run prebuild",
+    "prepublishOnly": "yarn && yarn build && yarn lint && yarn test",
+    "publish:npm": "lerna publish --registry=registry.npmjs.org",
+    "publish:github": "lerna publish --registry=npm.pkg.github.com",
+    "release": "lerna version --create-release=github",
+    "test": "jest",
+    "test:prod": "yarn test --coverage --no-cache",
+    "test:watch": "jest --watch",
+    "commitmsg": "commitlint -e $GIT_PARAMS",
+    "report-coverage": "cat ./coverage/lcov.info | coveralls",
+    "precommit": "lint-staged"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "packages/**/{src,test}/**/*.ts*": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false,
+    "trailingComma": "all"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@types/jest": "^24.0.19",
+    "coveralls": "^3.0.7",
+    "husky": "^3.0.9",
+    "jest": "^24.9.0",
+    "jest-config": "^24.9.0",
+    "lerna": "^3.18.1",
+    "lint-staged": "^9.4.2",
+    "prettier": "^1.18.2",
+    "rollup": "^1.25.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "rollup-plugin-typescript2": "^0.24.3",
+    "ts-jest": "^24.1.0",
+    "tslint": "^5.20.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.6.4"
+  }
+}
