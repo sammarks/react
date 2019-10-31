@@ -4,7 +4,7 @@
   "scripts": {
     "build": "lerna run build",
     "lint": "tslint -t codeFrame 'packages/**/@(src|bin)/*.ts*",
-    "postinstall": "lerna bootstrap --hoist --progress --no-ci",
+    "postinstall": "lerna bootstrap --progress",
     "prebuild": "lerna run prebuild",
     "prepublishOnly": "yarn && yarn build && yarn lint && yarn test",
     "publish:npm": "lerna publish --registry=registry.npmjs.org",
