@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "build": "lerna run build",
-    "lint": "tslint -t codeFrame 'packages/**/@(src|bin)/*.ts*",
+    "lint": "tslint -t codeFrame 'packages/**/@(src|bin)/*.ts*'",
     "postinstall": "lerna bootstrap --progress",
     "prebuild": "lerna run prebuild",
     "prepublishOnly": "yarn && yarn build && yarn lint && yarn test",
