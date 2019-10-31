@@ -4,5 +4,8 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "43d1ebe5116be65ffd3f0f630664a2bff9af6636"
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/sammarks/react.git"
+  }
 }
