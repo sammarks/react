@@ -33,7 +33,7 @@ jobs:
     needs: [build]
     steps:
       - uses: actions/checkout@v1
-      - name: Use Node 12.x
+      - name: Use Node 12.x for Github
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
@@ -43,9 +43,9 @@ jobs:
       - name: Publish to Github
         run: 'yarn publish:github'
         env:
-          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Publish to NPM
         run: 'yarn publish:npm'
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
