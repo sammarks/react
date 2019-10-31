@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.7](https://github.com/sammarks/react/compare/@sammarks/react-editor@0.0.6...@sammarks/react-editor@0.0.7) (2019-10-31)
+
+
+### Bug Fixes
+
+* add more agains to test the final publish workflow ([894c0e6](https://github.com/sammarks/react/commit/894c0e667a17dd913ab1fb479fc179b4bdaaa8cd))
+* add repository to individual packages so github doesnt get confused ([2d19d55](https://github.com/sammarks/react/commit/2d19d554f4e0fdd56505594a8b0428c9bda44f5b))
+* use absolute registry URLs and update actions to not run tests ([db34803](https://github.com/sammarks/react/commit/db34803deb4f9d642d8afcdba3cbdff1a61612c0))
+
+
+
+
+
 ## [0.0.6](https://github.com/sammarks/react/compare/@sammarks/react-editor@0.0.5...@sammarks/react-editor@0.0.6) (2019-10-31)
 
 
