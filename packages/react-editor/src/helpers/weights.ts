@@ -17,7 +17,7 @@ const _findWidget = (
           .map(childGroupKey => {
             return _findWidget(
               `${widget.id}-${childGroupKey}`,
-              widget.childGroups ? widget.childGroups[childGroupKey] : [],
+              widget.childGroups ? widget.childGroups[childGroupKey] || [] : [],
               widgetId,
             )
           })
@@ -46,7 +46,7 @@ const _updateWidgetWeight = (
           ...childGroups,
           [childGroupKey]: _updateWidgetWeight(
             `${childWidget.id}-${childGroupKey}`,
-            childWidget.childGroups![childGroupKey],
+            childWidget.childGroups![childGroupKey] || [],
             opts,
           ),
         }),

@@ -8,7 +8,7 @@ export type WidgetType =
   | string // For custom widget types.
 
 export interface WidgetChildGroups {
-  [group: string]: Widget[]
+  [group: string]: Widgets | undefined
 }
 
 export type WidgetConfig = object
@@ -31,8 +31,10 @@ export interface WidgetComponentProps<W extends Widget = Widget> {
   isMoveItemChild?: boolean
 }
 
+export type IconFunction = () => React.ReactElement
+
 export interface WidgetComponent<W extends Widget = Widget> extends FC<WidgetComponentProps<W>> {
-  icon?: string
+  icon?: string | IconFunction
   label?: string
   defaults: Partial<W>
 }
