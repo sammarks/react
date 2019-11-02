@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/sammarks/react/compare/@sammarks/react-editor@0.1.0...@sammarks/react-editor@0.2.0) (2019-11-02)
+
+
+### Features
+
+* add layout widgets ([4379b43](https://github.com/sammarks/react/commit/4379b4314a54770fd81e79b9ec9ef9b4a01e7345))
+
+
+
+
+
 # [0.1.0](https://github.com/sammarks/react/compare/@sammarks/react-editor@0.0.11...@sammarks/react-editor@0.1.0) (2019-11-02)
 
 
