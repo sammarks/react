@@ -4,15 +4,16 @@ import sourceMaps from 'rollup-plugin-sourcemaps'
 import typescript from 'rollup-plugin-typescript2'
 import json from 'rollup-plugin-json'
 
-export default (outputFile, overrides = {}) => ({
-  input: 'src/index.ts',
+export default (packageJson, overrides = {}) => ({
+  input: 'src/index.tsx',
   output: [
     {
-      file: outputFile,
+      file: packageJson.main,
       format: 'cjs',
       sourcemap: true
     }
   ],
+  external: Object.keys(packageJson.peerDependencies || {}),
   watch: {
     include: 'src/**'
   },

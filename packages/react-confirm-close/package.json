@@ -1,0 +1,37 @@
+{
+  "name": "@sammarks/react-confirm-close",
+  "version": "0.0.0",
+  "main": "dist/react-confirm-close.es5.js",
+  "typings": "dist/types/index.d.ts",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "tsc --module commonjs && rollup -c rollup.config.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/sammarks/react.git",
+    "directory": "packages/react-confirm-close"
+  },
+  "peerDependencies": {
+    "antd": "^3.18.0",
+    "react": "^16.8.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.11",
+    "@types/react-dom": "^16.9.3",
+    "antd": "^3.24.3",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "rimraf": "^3.0.0"
+  }
+}

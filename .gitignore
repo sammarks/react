@@ -1,4 +1,5 @@
 .idea
+packages/*/dist
 
 # Logs
 logs
