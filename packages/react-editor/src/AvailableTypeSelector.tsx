@@ -2,7 +2,7 @@ import React, { FC, ReactElement } from 'react'
 import { EditorTheme, WidgetType } from './types'
 import styled, { StyledComponent } from 'styled-components'
 import { Button, Icon } from 'antd'
-import { isString } from 'lodash'
+import isString from 'lodash/isString'
 
 type IconRenderer = () => ReactElement
 export interface AvailableType {

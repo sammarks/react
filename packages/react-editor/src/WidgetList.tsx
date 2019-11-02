@@ -1,6 +1,7 @@
 import React, { FC, useContext } from 'react'
 import classnames from 'classnames'
-import { max, cloneDeep } from 'lodash'
+import max from 'lodash/max'
+import cloneDeep from 'lodash/cloneDeep'
 import uuid from 'uuid/v4'
 import { Widget, Widgets, WidgetType } from './types'
 import { EditorContext } from './EditorContext'

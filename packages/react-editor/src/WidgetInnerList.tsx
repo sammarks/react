@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { findIndex, orderBy } from 'lodash'
+import orderBy from 'lodash/orderBy'
 import { WidgetDraggable } from './WidgetDraggable'
 import { EmptyList } from './EmptyList'
 import { MoveTarget } from './MoveTarget'
@@ -28,7 +28,7 @@ export const WidgetInnerList: React.FC<WidgetInnerListProps> = ({
   }
   const _widgetChange = (originalWidget: WidgetType, updates: Partial<WidgetType>) => {
     const widget = { ...originalWidget, ...updates }
-    const widgetIndex = findIndex(widgets, propWidget => propWidget.id === widget.id)
+    const widgetIndex = widgets.findIndex(propWidget => propWidget.id === widget.id)
     if (widgetIndex > -1 && onChange) {
       onChange([...widgets.slice(0, widgetIndex), widget, ...widgets.slice(widgetIndex + 1)])
     } else if (onChange) {
