@@ -1,6 +1,6 @@
 {
   "name": "@sammarks/react-confirm-close",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "dist/react-confirm-close.es5.js",
   "typings": "dist/types/index.d.ts",
   "license": "MIT",
@@ -33,6 +33,5 @@
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "rimraf": "^3.0.0"
-  },
-  "dependencies": {}
+  }
 }
