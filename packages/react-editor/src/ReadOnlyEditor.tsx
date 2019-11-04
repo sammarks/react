@@ -5,15 +5,17 @@ import FullScreen from 'react-full-screen'
 import styled, { StyledComponent } from 'styled-components'
 import { Icon, Tooltip } from 'antd'
 import classNames from 'classnames'
-import { EditorTheme, Widgets } from './types'
+import { EditorTheme, Widgets, WidgetComponents } from './types'
+import { DefaultWidgets } from './widgets'
 
-interface ReadOnlyEditorProps {
+export interface ReadOnlyEditorProps {
   value: Widgets
   allowFullscreen?: boolean
+  customWidgets?: WidgetComponents
 }
 
 export const ReadOnlyEditor: StyledComponent<React.FC<ReadOnlyEditorProps>, EditorTheme> = styled(
-  ({ value, allowFullscreen, className }) => {
+  ({ value, allowFullscreen, className, customWidgets = {} }) => {
     const [fullscreen, setFullscreen] = useState(false)
     return (
       <FullScreen enabled={fullscreen} onChange={setFullscreen}>
@@ -34,7 +36,16 @@ export const ReadOnlyEditor: StyledComponent<React.FC<ReadOnlyEditorProps>, Edit
                 </Tooltip>
               </div>
             )}
-            <EditorContext.Provider value={{ ...DefaultEditorContext, readOnly: true }}>
+            <EditorContext.Provider
+              value={{
+                ...DefaultEditorContext,
+                readOnly: true,
+                widgetComponents: {
+                  ...DefaultWidgets,
+                  ...customWidgets,
+                },
+              }}
+            >
               <WidgetList widgets={value} onChange={() => false} />
             </EditorContext.Provider>
           </div>

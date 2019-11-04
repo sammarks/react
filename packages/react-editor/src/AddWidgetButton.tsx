@@ -35,7 +35,7 @@ export const AddWidgetButton: StyledComponent<FC<AddWidgetButtonProps>, EditorTh
       })
       return (
         <React.Fragment>
-          <a>
+          <a onClick={() => setMultipleVisible(true)}>
             <div className={className}>
               <Icon type={'plus'} />
               <span>&nbsp;Add Widget</span>

@@ -8,14 +8,14 @@ import { Widgets, Widget as WidgetType } from './types'
 import { EditorContext } from './EditorContext'
 
 export interface WidgetInnerListProps {
-  widgets: Widgets
+  widgets?: Widgets
   id?: string
   isMoveItemChild?: boolean
   onChange?: (widgets: Widgets) => void
 }
 
 export const WidgetInnerList: React.FC<WidgetInnerListProps> = ({
-  widgets,
+  widgets = [],
   id,
   isMoveItemChild,
   onChange,
@@ -85,7 +85,7 @@ export const WidgetInnerList: React.FC<WidgetInnerListProps> = ({
     return (
       <React.Fragment>
         {sortedWidgets.map(widget => (
-          <Widget widget={widget} key={widget.id} readOnly />
+          <Widget widget={widget} key={widget.id} />
         ))}
       </React.Fragment>
     )

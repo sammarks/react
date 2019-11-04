@@ -25,7 +25,6 @@ export type Widgets = Widget[]
 
 export interface WidgetComponentProps<W extends Widget = Widget> {
   registerAction?: (element: ReactElement) => void
-  readOnly?: boolean
   onChange?: (widget: Partial<W>) => void
   widget: W
   isMoveItemChild?: boolean

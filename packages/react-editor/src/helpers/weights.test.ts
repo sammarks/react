@@ -64,6 +64,46 @@ describe('#updateWidgetWeight()', () => {
       expect(result[0].childGroups!['one']![0].weight).toEqual(0)
     })
   })
+  describe('when moving the widget to the end within the same parent', () => {
+    beforeEach(() => {
+      result = updateWidgetWeight('one', widgets, 'two', {
+        parentId: 'one-one',
+        weight: 1,
+      })
+    })
+    it('updates the weights within the parent', () => {
+      expect(result.length).toEqual(1)
+      expect(result[0].childGroups!['one']!.length).toEqual(2)
+      expect(result[0].childGroups!['one']![1].id).toEqual('two')
+      expect(result[0].childGroups!['one']![1].weight).toEqual(1)
+      expect(result[0].childGroups!['one']![0].id).toEqual('three')
+      expect(result[0].childGroups!['one']![0].weight).toEqual(0)
+    })
+  })
+  describe('when moving the widget to the middle within the same parent', () => {
+    beforeEach(() => {
+      widgets[0].childGroups!['one']!.push({
+        type: 'MarkdownContent',
+        id: 'end',
+        weight: 2,
+        config: {},
+      })
+      result = updateWidgetWeight('one', widgets, 'two', {
+        parentId: 'one-one',
+        weight: 1,
+      })
+    })
+    it('updates the weights within the parent', () => {
+      expect(result.length).toEqual(1)
+      expect(result[0].childGroups!['one']!.length).toEqual(3)
+      expect(result[0].childGroups!['one']![0].id).toEqual('three')
+      expect(result[0].childGroups!['one']![0].weight).toEqual(0)
+      expect(result[0].childGroups!['one']![1].id).toEqual('two')
+      expect(result[0].childGroups!['one']![1].weight).toEqual(1)
+      expect(result[0].childGroups!['one']![2].id).toEqual('end')
+      expect(result[0].childGroups!['one']![2].weight).toEqual(2)
+    })
+  })
   describe('when moving the widget to a new parent', () => {
     beforeEach(() => {
       result = updateWidgetWeight('one', widgets, 'three', {

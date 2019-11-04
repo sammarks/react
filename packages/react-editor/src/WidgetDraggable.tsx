@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useCallback } from 'react'
 import { Draggable } from 'react-beautiful-dnd'
 import { Widget } from './Widget'
 import styled, { StyledComponent } from 'styled-components'
@@ -17,6 +17,12 @@ export const WidgetDraggable: StyledComponent<React.FC<WidgetDraggableProps>, Ed
   ({ listId, onDelete, widget, className, ...widgetProps }) => {
     const [actionsHovering, setActionsHovering] = useState(false)
     const [additionalActions, setAdditionalActions] = useState<React.ReactElement[]>([])
+    const registerAction = useCallback(
+      action => {
+        setAdditionalActions([...additionalActions, action])
+      },
+      [setAdditionalActions],
+    )
     const context = useContext(EditorContext)
 
     const _renderActions = () => (
@@ -46,13 +52,7 @@ export const WidgetDraggable: StyledComponent<React.FC<WidgetDraggableProps>, Ed
       </React.Fragment>
     )
     const _renderWidget = () => (
-      <Widget
-        widget={widget}
-        {...widgetProps}
-        registerAction={action => {
-          setAdditionalActions([...additionalActions, action])
-        }}
-      />
+      <Widget widget={widget} {...widgetProps} registerAction={registerAction} />
     )
     const _renderNormal = () => (
       <Draggable draggableId={widget.id} index={widget.weight} type={listId}>

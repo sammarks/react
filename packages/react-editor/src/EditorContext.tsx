@@ -1,5 +1,5 @@
 import React from 'react'
-import { WidgetComponents } from './types'
+import { WidgetComponents, WidgetType } from './types'
 
 export interface IEditorContext {
   editorId: string
@@ -8,6 +8,7 @@ export interface IEditorContext {
   moveItem: (targetListId: string) => void
   widgetComponents: WidgetComponents
   readOnly?: boolean
+  addTypes?: WidgetType[]
 }
 
 export const DefaultEditorContext: IEditorContext = {

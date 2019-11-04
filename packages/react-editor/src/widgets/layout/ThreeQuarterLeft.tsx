@@ -6,8 +6,8 @@ import { widgetDefaults } from '../widgetDefaults'
 import { LayoutWidgetColumn } from './types'
 
 const COLUMNS: LayoutWidgetColumn[] = [
-  { columns: 12, name: 'leftWidgets', sm: 24, md: 18 },
-  { columns: 12, name: 'rightWidgets', sm: 24, md: 6 },
+  { columns: 12, name: 'leftWidgets', sm: 24, md: 6 },
+  { columns: 12, name: 'rightWidgets', sm: 24, md: 18 },
 ]
 
 export interface ThreeQuarterLeftWidget extends Widget {

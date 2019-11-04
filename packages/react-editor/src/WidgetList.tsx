@@ -14,13 +14,13 @@ interface WidgetListProps {
   id?: string
   onChange?: (widgets: Widgets) => void
   isMoveItemChild?: boolean
-  addTypes?: WidgetType[]
   className?: string
 }
 
 export const WidgetList: FC<WidgetListProps> = props => {
-  const { widgets, id, onChange, addTypes = [], className } = props
+  const { widgets, id, onChange, className } = props
   const context = useContext(EditorContext)
+  const addTypes = context.addTypes || []
   const availableTypes =
     addTypes && addTypes.length ? addTypes : Object.keys(context.widgetComponents)
 

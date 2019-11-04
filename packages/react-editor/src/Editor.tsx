@@ -1,11 +1,12 @@
-import React, { FC, ReactElement, useState } from 'react'
-import { EditorTheme, WidgetComponents, Widgets } from './types'
+import React, { FC, ReactElement, useState, useEffect, useMemo, useCallback } from 'react'
+import { EditorTheme, WidgetComponents, Widgets, WidgetType } from './types'
 import { OnDragEndResponder, DragDropContext } from 'react-beautiful-dnd'
 import { updateWidgetWeight } from './helpers/weights'
 import { Button } from 'antd'
 import styled, { StyledComponent } from 'styled-components'
 import { EditorContext } from './EditorContext'
 import { DefaultWidgets } from './widgets'
+import { WidgetList } from './WidgetList'
 
 interface RegisterDropFunction {
   (dropFunctionId: string, dropFunction: OnDragEndResponder): void
@@ -17,25 +18,37 @@ export interface EditorProps {
   editorId: string
   onChange: (value: Widgets) => void
   registerDropFunction?: RegisterDropFunction
+  addTypes?: WidgetType[]
 }
 
 export const Editor: StyledComponent<FC<EditorProps>, EditorTheme> = styled(
-  ({ onChange, customWidgets = {}, value = [], editorId, className, registerDropFunction }) => {
+  ({
+    onChange,
+    customWidgets = {},
+    addTypes = [],
+    value = [],
+    editorId,
+    className,
+    registerDropFunction,
+  }) => {
     const [movingWidgetId, setMovingWidgetId] = useState<string | null>(null)
-    const rootGroupId = `${editorId}-editor-root`
-    const _onDragEnd: OnDragEndResponder = result => {
-      if (result.destination && result.source) {
-        const id = result.draggableId
-        const parentId = result.destination.droppableId
-        const weight = result.destination.index
-        onChange(
-          updateWidgetWeight(rootGroupId, value, id, {
-            parentId,
-            weight,
-          }),
-        )
-      }
-    }
+    const rootGroupId = useMemo(() => `${editorId}-editor-root`, [editorId])
+    const _onDragEnd: OnDragEndResponder = useCallback(
+      result => {
+        if (result.destination && result.source) {
+          const id = result.draggableId
+          const parentId = result.destination.droppableId
+          const weight = result.destination.index
+          onChange(
+            updateWidgetWeight(rootGroupId, value, id, {
+              parentId,
+              weight,
+            }),
+          )
+        }
+      },
+      [value, rootGroupId],
+    )
     const _onMoveItem = (targetListId: string) => {
       if (!movingWidgetId) return
       onChange(
@@ -46,6 +59,11 @@ export const Editor: StyledComponent<FC<EditorProps>, EditorTheme> = styled(
       )
       setMovingWidgetId(null)
     }
+    useEffect(() => {
+      if (registerDropFunction) {
+        registerDropFunction(`editor-${editorId}`, _onDragEnd)
+      }
+    }, [registerDropFunction, _onDragEnd])
 
     let cancelMove: ReactElement | null = null
     if (movingWidgetId) {
@@ -67,9 +85,11 @@ export const Editor: StyledComponent<FC<EditorProps>, EditorTheme> = styled(
             ...DefaultWidgets,
             ...customWidgets,
           },
+          addTypes,
         }}
       >
         <div className={className}>{cancelMove}</div>
+        <WidgetList onChange={onChange} widgets={value} id={`${editorId}-editor-root`} />
       </EditorContext.Provider>
     )
 

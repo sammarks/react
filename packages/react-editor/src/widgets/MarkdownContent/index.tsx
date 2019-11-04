@@ -18,7 +18,6 @@ export interface MarkdownContentWidgetConfig extends WidgetConfig {
 export const MarkdownContent: WidgetComponent<MarkdownContentWidget> = ({
   onChange,
   registerAction,
-  readOnly,
   widget,
 }) => {
   const [modalKey, setModalKey] = useState<string | undefined>()
@@ -37,7 +36,7 @@ export const MarkdownContent: WidgetComponent<MarkdownContentWidget> = ({
       )
     }
   }, [registerAction])
-  if (readOnly) {
+  if (editorContext.readOnly) {
     return <Markdown source={widget.config.content} />
   } else {
     if (!editorContext.movingWidgetId) {
@@ -71,7 +70,7 @@ export const MarkdownContent: WidgetComponent<MarkdownContentWidget> = ({
 MarkdownContent.icon = 'copy'
 MarkdownContent.defaults = {
   ...widgetDefaults,
-  type: 'Content',
+  type: 'MarkdownContent',
   config: {
     content: 'Add some **content!**',
   },

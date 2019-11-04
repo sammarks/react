@@ -37,9 +37,13 @@ const _updateWidgetWeight = (
   opts: UpdateWidgetWeightOptsWithWeight,
 ) => {
   const { widget, parentId, weight } = opts
+  let widgetInParent = false
   const result = widgets.reduce<Widgets>((acc, childWidget, index) => {
     const widgetId = childWidget.id
-    if (widgetId === widget.id) return acc
+    if (widgetId === widget.id) {
+      widgetInParent = true
+      return acc
+    }
     if (childWidget.childGroups) {
       childWidget.childGroups = Object.keys(childWidget.childGroups).reduce(
         (childGroups, childGroupKey) => ({
@@ -54,8 +58,8 @@ const _updateWidgetWeight = (
       )
     }
     if (groupId === parentId && index === weight) {
-      if (index < widgets.length - 1) return [...acc, widget, childWidget]
-      else return [...acc, widget, childWidget]
+      if (index === 0 || !widgetInParent) return [...acc, widget, childWidget]
+      else return [...acc, childWidget, widget]
     }
     return [...acc, childWidget]
   }, [])
