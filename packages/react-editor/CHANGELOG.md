@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.2](https://github.com/sammarks/react/compare/@sammarks/react-editor@0.2.1...@sammarks/react-editor@0.2.2) (2019-11-08)
+
+
+### Bug Fixes
+
+* make sure ordering works when not ordering deeply ([32e0855](https://github.com/sammarks/react/commit/32e085506670f28d17d7b7a48eb096cce313421b))
+
+
+
+
+
 ## [0.2.1](https://github.com/sammarks/react/compare/@sammarks/react-editor@0.2.0...@sammarks/react-editor@0.2.1) (2019-11-04)
 
 
