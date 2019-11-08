@@ -37,7 +37,13 @@ export const Editor: StyledComponent<FC<EditorProps>, EditorTheme> = styled(
       result => {
         if (result.destination && result.source) {
           const id = result.draggableId
-          const parentId = result.destination.droppableId
+          let parentId = result.destination.droppableId
+          try {
+            const parsed = JSON.parse(result.destination.droppableId)
+            if (parsed.droppableId) parentId = parsed.droppableId
+          } catch (err) {
+            // Do nothing on purpose...
+          }
           const weight = result.destination.index
           onChange(
             updateWidgetWeight(rootGroupId, value, id, {
@@ -89,7 +95,7 @@ export const Editor: StyledComponent<FC<EditorProps>, EditorTheme> = styled(
         }}
       >
         <div className={className}>{cancelMove}</div>
-        <WidgetList onChange={onChange} widgets={value} id={`${editorId}-editor-root`} />
+        <WidgetList onChange={onChange} widgets={value} id={rootGroupId} />
       </EditorContext.Provider>
     )
 

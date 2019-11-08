@@ -38,6 +38,25 @@ describe('#updateWidgetWeight()', () => {
       expect(result[0].childGroups!['one']![1].id).toEqual('three')
     })
   })
+  describe('when moving a simple widget list', () => {
+    beforeEach(() => {
+      widgets = [
+        { type: 'MarkdownContent', id: 'one', weight: 0, config: {} },
+        { type: 'MarkdownContent', id: 'two', weight: 1, config: {} },
+      ]
+      result = updateWidgetWeight('root', widgets, 'two', {
+        parentId: 'root',
+        weight: 0,
+      })
+    })
+    it('updates the weights', () => {
+      expect(result.length).toEqual(2)
+      expect(result[0].id).toEqual('two')
+      expect(result[0].weight).toEqual(0)
+      expect(result[1].id).toEqual('one')
+      expect(result[1].weight).toEqual(1)
+    })
+  })
   describe('when the widget cannot be found', () => {
     it('throws an error', () => {
       expect(() =>

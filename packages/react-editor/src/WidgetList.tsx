@@ -58,7 +58,7 @@ export const WidgetList: FC<WidgetListProps> = props => {
               if (onChange) {
                 const maximumWeight = max(widgets.map(widget => widget.weight)) || 0
                 const newWidget = cloneDeep(context.widgetComponents[widgetType].defaults)
-                newWidget.weight = maximumWeight + 1
+                newWidget.weight = widgets.length > 0 ? maximumWeight + 1 : 0
                 newWidget.id = uuid()
                 onChange([...widgets, newWidget as Widget])
               }

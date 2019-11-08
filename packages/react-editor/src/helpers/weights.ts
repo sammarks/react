@@ -82,6 +82,7 @@ export const updateWidgetWeight = (
   widgetId: string,
   opts: UpdateWidgetWeightOpts,
 ) => {
+  console.info('updating weight', rootGroupId, widgets, widgetId, opts)
   const widget = _findWidget(rootGroupId, widgets, widgetId)
   if (!widget) {
     throw new Error(`Widget '${widgetId}' could not be moved because it could not be found.`)
