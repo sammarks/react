@@ -87,9 +87,9 @@ export const WidgetDraggable: StyledComponent<React.FC<WidgetDraggableProps>, Ed
   },
 )`
   background: transparent;
-  transition: background 0.1s linear, border 0.1s linear;
+  transition: background 0.1s linear, outline 0.1s linear;
   position: relative;
-  border: solid 2px transparent;
+  outline: solid transparent;
   .top-actions {
     position: absolute;
     top: 0;
@@ -120,10 +120,10 @@ export const WidgetDraggable: StyledComponent<React.FC<WidgetDraggableProps>, Ed
     }
   }
   .content {
-    padding: 30px 5px 5px 5px;
+    padding: 30px 0 5px 0;
   }
   &.actions-hover {
-    border-color: ${props => props.theme['@blue']};
+    outline: solid ${props => props.theme['@blue']};
   }
   &:hover {
     background: ${props => props.theme['@gray-1']};
