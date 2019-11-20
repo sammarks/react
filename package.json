@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "build": "lerna run build",
-    "lint": "tslint -t codeFrame 'packages/**/@(src|bin)/*.ts*'",
+    "lint": "tslint -t codeFrame 'packages/*/@(src|bin)/*.ts*'",
     "postinstall": "lerna bootstrap --progress",
     "prebuild": "lerna run prebuild",
     "prepublishOnly": "yarn && yarn build && yarn lint && yarn test",
@@ -15,7 +15,9 @@
     "test:watch": "jest --watch",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "report-coverage": "cat ./coverage/lcov.info | coveralls",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "commitlint": {
     "extends": [
@@ -63,6 +65,7 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-config-standard": "^8.0.1",
     "tslint-plugin-prettier": "^2.0.1",
-    "typescript": "^3.6.4"
+    "typescript": "^3.6.4",
+    "vuepress": "^1.2.0"
   }
 }

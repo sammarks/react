@@ -5,6 +5,11 @@ import { widgetDefaults } from './widgets/widgetDefaults'
 import { EditorContext } from './EditorContext'
 import { DefaultWidgets } from './widgets/index'
 import { ReadOnlyEditor, ReadOnlyEditorProps } from './ReadOnlyEditor'
+import { EditableWidget, EditableWidgetProps } from './widgets/EditableWidget'
+import {
+  EditableWidgetDrawer,
+  EditableWidgetDrawerProps,
+} from './widgets/EditableWidget/EditableWidgetDrawer'
 
 export {
   Editor,
@@ -18,5 +23,9 @@ export {
   DefaultWidgets,
   ReadOnlyEditor,
   ReadOnlyEditorProps,
+  EditableWidget,
+  EditableWidgetDrawer,
+  EditableWidgetProps,
+  EditableWidgetDrawerProps,
 }
 export default Editor
