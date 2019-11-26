@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/sammarks/react/compare/@sammarks/react-editor@0.3.0...@sammarks/react-editor@0.3.1) (2019-11-26)
+
+
+### Bug Fixes
+
+* remove unused code ([d714788](https://github.com/sammarks/react/commit/d7147884a27b33925bc0d91a64e0d43c9377f741))
+* set a max width on all images ([367c490](https://github.com/sammarks/react/commit/367c490b0e1ff9160dcf8312d20b51dc03a4a49c))
+
+
+
+
+
 # [0.3.0](https://github.com/sammarks/react/compare/@sammarks/react-editor@0.2.2...@sammarks/react-editor@0.3.0) (2019-11-20)
 
 
