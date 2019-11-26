@@ -6,6 +6,7 @@ import { MoveTarget } from './MoveTarget'
 import { Widget } from './Widget'
 import { Widgets, Widget as WidgetType } from './types'
 import { EditorContext } from './EditorContext'
+import styled from 'styled-components'
 
 export interface WidgetInnerListProps {
   widgets?: Widgets
@@ -13,6 +14,12 @@ export interface WidgetInnerListProps {
   isMoveItemChild?: boolean
   onChange?: (widgets: Widgets) => void
 }
+
+const WidgetContainer = styled.div`
+  img {
+    max-width: 100%;
+  }
+`
 
 export const WidgetInnerList: React.FC<WidgetInnerListProps> = ({
   widgets = [],
@@ -59,7 +66,7 @@ export const WidgetInnerList: React.FC<WidgetInnerListProps> = ({
   )
   const _renderNormal = () => {
     if (sortedWidgets.length > 0) {
-      return _renderSortedWidgets()
+      return <WidgetContainer>{_renderSortedWidgets()}</WidgetContainer>
     } else {
       return <EmptyList />
     }
@@ -83,11 +90,11 @@ export const WidgetInnerList: React.FC<WidgetInnerListProps> = ({
 
   if (context.readOnly) {
     return (
-      <React.Fragment>
+      <WidgetContainer>
         {sortedWidgets.map(widget => (
           <Widget widget={widget} key={widget.id} />
         ))}
-      </React.Fragment>
+      </WidgetContainer>
     )
   } else if (context.movingWidgetId) {
     return _renderMoveMode()
