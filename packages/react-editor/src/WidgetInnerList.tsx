@@ -28,11 +28,6 @@ export const WidgetInnerList: React.FC<WidgetInnerListProps> = ({
   onChange,
 }) => {
   const context = useContext(EditorContext)
-  const _onDelete = (widget: WidgetType) => {
-    if (onChange) {
-      onChange(widgets.filter(propWidget => propWidget.id !== widget.id))
-    }
-  }
   const _widgetChange = (originalWidget: WidgetType, updates: Partial<WidgetType>) => {
     const widget = { ...originalWidget, ...updates }
     const widgetIndex = widgets.findIndex(propWidget => propWidget.id === widget.id)
