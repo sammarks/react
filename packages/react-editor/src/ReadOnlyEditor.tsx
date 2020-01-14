@@ -53,4 +53,30 @@ export const ReadOnlyEditor: StyledComponent<React.FC<ReadOnlyEditorProps>, Edit
       </FullScreen>
     )
   },
-)``
+)`
+  &.fullscreen-enabled > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+    overflow-y: auto;
+    background: ${props => props.theme['@layout-body-background']};
+  }
+  .content > .header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    > i {
+      font-size: 16px;
+      color: ${props => props.theme['@gray-4']};
+      transition: color 0.1s linear;
+      cursor: pointer;
+      &:hover {
+        color: ${props => props.theme['@gray-7']};
+      }
+    }
+  }
+`
