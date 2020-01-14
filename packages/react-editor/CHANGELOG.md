@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.2](https://github.com/sammarks/react/compare/@sammarks/react-editor@0.3.1...@sammarks/react-editor@0.3.2) (2020-01-14)
+
+
+### Bug Fixes
+
+* add missing styles to ReadOnlyEditor ([5b6ed47](https://github.com/sammarks/react/commit/5b6ed47970ecb8dc593414a3a1493bace5a232ae))
+
+
+
+
+
 ## [0.3.1](https://github.com/sammarks/react/compare/@sammarks/react-editor@0.3.0...@sammarks/react-editor@0.3.1) (2019-11-26)
 
 
