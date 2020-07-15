@@ -3,7 +3,8 @@ import { Draggable } from 'react-beautiful-dnd'
 import { Widget } from './Widget'
 import styled, { StyledComponent } from 'styled-components'
 import classNames from 'classnames'
-import { Tooltip, Icon, Popconfirm } from 'antd'
+import { Icon as LegacyIcon } from '@ant-design/compatible'
+import { Tooltip, Popconfirm } from 'antd'
 import { Dragger } from './Dragger'
 import { WidgetComponentProps, EditorTheme, Widget as WidgetType } from './types'
 import { EditorContext } from './EditorContext'
@@ -34,7 +35,7 @@ export const WidgetDraggable: StyledComponent<React.FC<WidgetDraggableProps>, Ed
               context.enableMoveMode(widget.id)
             }}
           >
-            <Icon type={'arrow-right'} />
+            <LegacyIcon type={'arrow-right'} />
           </a>
         </Tooltip>
         <Tooltip title={'Delete'}>
@@ -45,7 +46,7 @@ export const WidgetDraggable: StyledComponent<React.FC<WidgetDraggableProps>, Ed
             okText={'Yes, delete'}
           >
             <a>
-              <Icon type={'delete'} className={'delete-icon'} />
+              <LegacyIcon type={'delete'} className={'delete-icon'} />
             </a>
           </Popconfirm>
         </Tooltip>
@@ -55,7 +56,7 @@ export const WidgetDraggable: StyledComponent<React.FC<WidgetDraggableProps>, Ed
       <Widget widget={widget} {...widgetProps} registerAction={registerAction} />
     )
     const _renderNormal = () => (
-      <Draggable draggableId={widget.id} index={widget.weight} type={listId}>
+      <Draggable draggableId={widget.id} index={widget.weight}>
         {provided => (
           <div
             ref={provided.innerRef}

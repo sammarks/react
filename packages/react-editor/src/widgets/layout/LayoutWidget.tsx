@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 import { WidgetComponentProps, Widgets, Widget, WidgetConfig } from '../../types'
-import { Row, Col, Form, InputNumber, Select } from 'antd'
+import { Form } from '@ant-design/compatible'
+
+import { Row, Col, InputNumber, Select } from 'antd'
 import { WidgetList } from '../../WidgetList'
 import { EditorContext } from '../../EditorContext'
 import { LayoutWidgetColumn } from './types'
@@ -37,7 +39,6 @@ export const LayoutWidget: React.FC<LayoutWidgetProps> = ({
       style={{ marginTop: '30px' }}
       gutter={widget.config && !isNil(widget.config.gutter) ? widget.config.gutter : 16}
       align={widget.config && widget.config.alignment ? widget.config.alignment : 'top'}
-      type={'flex'}
     >
       {columns.map(column => (
         <Col key={column.name} {...column}>
@@ -77,7 +78,6 @@ export const LayoutWidget: React.FC<LayoutWidgetProps> = ({
       <Row
         gutter={widget.config && !isNil(widget.config.gutter) ? widget.config.gutter : 16}
         align={widget.config && widget.config.alignment ? widget.config.alignment : 'top'}
-        type={'flex'}
       >
         {columns.map(column => (
           <Col key={column.name} {...column}>

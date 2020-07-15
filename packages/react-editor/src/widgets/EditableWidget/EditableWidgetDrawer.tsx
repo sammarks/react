@@ -1,14 +1,15 @@
 import React from 'react'
 import { confirmClose } from '@sammarks/react-confirm-close'
-import { Button, Drawer, Form } from 'antd'
-import { FormProps, FormComponentProps } from 'antd/lib/form'
+import { Form } from '@ant-design/compatible'
+import { Button, Drawer } from 'antd'
+import { FormComponentProps } from '@ant-design/compatible/lib/form'
 import { DrawerProps } from 'antd/lib/drawer'
 import { ConfirmCloseComponentProps } from '../../../../react-confirm-close/src/types'
 import { WidgetComponentProps } from '../../types'
 
 export interface EditableWidgetDrawerProps extends WidgetComponentProps {
   onClose: () => void
-  formProps?: Partial<FormProps>
+  formProps?: any
   visible?: boolean
   drawerProps?: Partial<DrawerProps>
   children: (

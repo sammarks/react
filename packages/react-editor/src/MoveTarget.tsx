@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled, { StyledComponent } from 'styled-components'
-import { Icon } from 'antd'
+import { Icon as LegacyIcon } from '@ant-design/compatible'
 import classNames from 'classnames'
 import { EditorTheme } from './types'
 
@@ -26,7 +26,7 @@ export const MoveTarget: StyledComponent<React.FC<MoveTargetProps>, EditorTheme>
           onMouseEnter={() => setHovering(true)}
           onMouseLeave={() => setHovering(false)}
         >
-          <Icon type={'fullscreen-exit'} style={{ fontSize: 20 }} />
+          <LegacyIcon type={'fullscreen-exit'} style={{ fontSize: 20 }} />
           <span>Move Here</span>
         </div>
         <div className={'children'}>{children}</div>

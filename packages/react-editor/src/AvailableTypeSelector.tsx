@@ -1,7 +1,8 @@
 import React, { FC, ReactElement } from 'react'
 import { EditorTheme, WidgetType } from './types'
 import styled, { StyledComponent } from 'styled-components'
-import { Button, Icon } from 'antd'
+import { Icon as LegacyIcon } from '@ant-design/compatible'
+import { Button } from 'antd'
 import isString from 'lodash/isString'
 
 type IconRenderer = () => ReactElement
@@ -23,7 +24,7 @@ export const AvailableTypeSelector: StyledComponent<
   <div className={className}>
     {items.map((item: AvailableType) => (
       <Button key={item.type} onClick={() => onItemSelected(item.type)}>
-        {isString(item.icon) ? <Icon type={item.icon} /> : item.icon()}
+        {isString(item.icon) ? <LegacyIcon type={item.icon} /> : item.icon()}
         <span>{item.label}</span>
       </Button>
     ))}

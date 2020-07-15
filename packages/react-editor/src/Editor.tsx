@@ -2,6 +2,7 @@ import React, { FC, ReactElement, useState, useEffect, useMemo, useCallback } fr
 import { EditorTheme, WidgetComponents, Widgets, WidgetType } from './types'
 import { OnDragEndResponder, DragDropContext } from 'react-beautiful-dnd'
 import { updateWidgetWeight } from './helpers/weights'
+import { Icon as LegacyIcon } from '@ant-design/compatible'
 import { Button } from 'antd'
 import styled, { StyledComponent } from 'styled-components'
 import { EditorContext } from './EditorContext'
@@ -74,7 +75,11 @@ export const Editor: StyledComponent<FC<EditorProps>, EditorTheme> = styled(
     let cancelMove: ReactElement | null = null
     if (movingWidgetId) {
       cancelMove = (
-        <Button className={'cancel-move'} icon={'close'} onClick={() => setMovingWidgetId(null)}>
+        <Button
+          className={'cancel-move'}
+          icon={<LegacyIcon type={'close'} />}
+          onClick={() => setMovingWidgetId(null)}
+        >
           Cancel
         </Button>
       )

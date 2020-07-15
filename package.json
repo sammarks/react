@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "build": "lerna run build",
-    "lint": "tslint -t codeFrame 'packages/*/@(src|bin)/*.ts*'",
+    "lint": "tslint -t codeFrame 'packages/*/@(src|bin)/**/*.ts*'",
     "postinstall": "lerna bootstrap --progress",
     "prebuild": "lerna run prebuild",
     "prepublishOnly": "yarn && yarn build && yarn lint && yarn test",
@@ -67,5 +67,10 @@
     "tslint-plugin-prettier": "^2.0.1",
     "typescript": "^3.6.4",
     "vuepress": "^1.2.0"
+  },
+  "resolutions": {
+    "@types/react": "^16.9.43",
+    "@types/react-dom": "^16.9.8",
+    "@types/styled-components": "4.1.8"
   }
 }

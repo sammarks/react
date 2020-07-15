@@ -9,7 +9,7 @@ export interface MarkdownEditorProps extends Omit<TextAreaProps, 'onChange'> {
 export const MarkdownEditor: React.FC<MarkdownEditorProps> = props => (
   <Input.TextArea
     rows={10}
-    autosize={{ minRows: 6, maxRows: 30 }}
+    autoSize={{ minRows: 6, maxRows: 30 }}
     {...props}
     onChange={e => {
       props.onChange(e.target.value)

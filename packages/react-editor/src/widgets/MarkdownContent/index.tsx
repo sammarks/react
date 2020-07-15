@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Widget, WidgetComponent, WidgetConfig } from '../../types'
 import { widgetDefaults } from '../widgetDefaults'
 import { v4 as uuid } from 'uuid'
-import { Icon, Tooltip } from 'antd'
+import { Icon as LegacyIcon } from '@ant-design/compatible'
+import { Tooltip } from 'antd'
 import Markdown from 'react-markdown'
 import { EditorContext } from '../../EditorContext'
 import { MarkdownModal } from './MarkdownModal'
@@ -30,7 +31,7 @@ export const MarkdownContent: WidgetComponent<MarkdownContentWidget> = ({
       registerAction(
         <Tooltip key={'edit'} title={'Edit'}>
           <a onClick={onEditContent}>
-            <Icon type={'edit'} />
+            <LegacyIcon type={'edit'} />
           </a>
         </Tooltip>,
       )

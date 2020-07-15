@@ -2,7 +2,8 @@ import React, { FC, useContext, useState } from 'react'
 import { EditorTheme, WidgetType } from './types'
 import styled, { StyledComponent } from 'styled-components'
 import Case from 'case'
-import { Button, Icon, Modal } from 'antd'
+import { Icon as LegacyIcon } from '@ant-design/compatible'
+import { Button, Modal } from 'antd'
 import { EditorContext } from './EditorContext'
 import { AvailableType, AvailableTypeSelector } from './AvailableTypeSelector'
 
@@ -19,7 +20,7 @@ export const AddWidgetButton: StyledComponent<FC<AddWidgetButtonProps>, EditorTh
       return (
         <a onClick={() => onAdd(availableTypes[0])}>
           <div className={className}>
-            <Icon type={'plus'} />
+            <LegacyIcon type={'plus'} />
             <span>{` Add ${Case.title(availableTypes[0])}`}</span>
           </div>
         </a>
@@ -37,7 +38,7 @@ export const AddWidgetButton: StyledComponent<FC<AddWidgetButtonProps>, EditorTh
         <React.Fragment>
           <a onClick={() => setMultipleVisible(true)}>
             <div className={className}>
-              <Icon type={'plus'} />
+              <LegacyIcon type={'plus'} />
               <span>&nbsp;Add Widget</span>
             </div>
           </a>

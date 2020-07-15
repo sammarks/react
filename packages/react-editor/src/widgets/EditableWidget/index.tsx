@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { Tooltip, Icon } from 'antd'
+import { Icon as LegacyIcon } from '@ant-design/compatible'
+import { Tooltip } from 'antd'
 import { v4 as uuid } from 'uuid'
 import { EditableWidgetDrawer, EditableWidgetDrawerProps } from './EditableWidgetDrawer'
 import { WidgetComponentProps } from '../../types'
@@ -25,7 +26,7 @@ export const EditableWidget: React.FC<EditableWidgetProps> = ({
       registerAction(
         <Tooltip key={'edit'} title={'Edit'}>
           <a onClick={_onEdit}>
-            <Icon type={'edit'} />
+            <LegacyIcon type={'edit'} />
           </a>
         </Tooltip>,
       )

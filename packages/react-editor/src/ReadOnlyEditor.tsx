@@ -3,7 +3,8 @@ import { WidgetList } from './WidgetList'
 import { DefaultEditorContext, EditorContext } from './EditorContext'
 import FullScreen from 'react-full-screen'
 import styled, { StyledComponent } from 'styled-components'
-import { Icon, Tooltip } from 'antd'
+import { Icon as LegacyIcon } from '@ant-design/compatible'
+import { Tooltip } from 'antd'
 import classNames from 'classnames'
 import { EditorTheme, Widgets, WidgetComponents } from './types'
 import { DefaultWidgets } from './widgets'
@@ -29,7 +30,7 @@ export const ReadOnlyEditor: StyledComponent<React.FC<ReadOnlyEditorProps>, Edit
             {allowFullscreen && (
               <div className={'header'}>
                 <Tooltip title={fullscreen ? 'Exit Fullscreen Mode' : 'View Fullscreen'}>
-                  <Icon
+                  <LegacyIcon
                     type={fullscreen ? 'fullscreen-exit' : 'fullscreen'}
                     onClick={() => setFullscreen(!fullscreen)}
                   />
