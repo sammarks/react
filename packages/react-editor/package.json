@@ -1,6 +1,6 @@
 {
   "name": "@sammarks/react-editor",
-  "version": "0.3.2",
+  "version": "1.0.0",
   "main": "dist/react-editor.es5.js",
   "typings": "dist/types/index.d.ts",
   "license": "MIT",
@@ -23,8 +23,8 @@
     "directory": "packages/react-editor"
   },
   "peerDependencies": {
-    "antd": "^4.x",
     "@ant-design/compatible": "*",
+    "antd": "^4.x",
     "react": "^16.8.0",
     "react-beautiful-dnd": "*",
     "styled-components": "*"
@@ -46,7 +46,7 @@
     "styled-components": "^5.1.1"
   },
   "dependencies": {
-    "@sammarks/react-confirm-close": "^0.1.1",
+    "@sammarks/react-confirm-close": "^1.0.0",
     "case": "^1.6.3",
     "classnames": "^2.2.6",
     "lodash": "^4.17.19",
