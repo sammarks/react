@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Widget, WidgetComponent, WidgetConfig } from '../../types'
 import { widgetDefaults } from '../widgetDefaults'
-import uuid from 'uuid/v4'
+import { v4 as uuid } from 'uuid'
 import { Icon, Tooltip } from 'antd'
 import Markdown from 'react-markdown'
 import { EditorContext } from '../../EditorContext'

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Tooltip, Icon } from 'antd'
-import uuid from 'uuid/v4'
+import { v4 as uuid } from 'uuid'
 import { EditableWidgetDrawer, EditableWidgetDrawerProps } from './EditableWidgetDrawer'
 import { WidgetComponentProps } from '../../types'
 

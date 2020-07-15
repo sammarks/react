@@ -23,15 +23,15 @@
     "directory": "packages/react-confirm-close"
   },
   "peerDependencies": {
-    "antd": "^3.18.0",
-    "react": "^16.8.0"
+    "antd": "^4.x",
+    "react": "^16.12.0"
   },
   "devDependencies": {
-    "@types/react": "^16.9.11",
-    "@types/react-dom": "^16.9.3",
-    "antd": "^3.24.3",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
+    "@types/react": "^16.9.43",
+    "@types/react-dom": "^16.9.8",
+    "antd": "^4.4.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "rimraf": "^3.0.0"
   }
 }
