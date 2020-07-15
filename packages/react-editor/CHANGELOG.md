@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/sammarks/react/compare/@sammarks/react-editor@1.0.0...@sammarks/react-editor@1.0.1) (2020-07-15)
+
+
+### Bug Fixes
+
+* use ant icon styles properly ([4b67b1d](https://github.com/sammarks/react/commit/4b67b1db248cd435956a03ed06157b0178160ee2))
+
+
+
+
+
 # [1.0.0](https://github.com/sammarks/react/compare/@sammarks/react-editor@0.3.2...@sammarks/react-editor@1.0.0) (2020-07-15)
 
 **Note:** Version bump only for package @sammarks/react-editor
