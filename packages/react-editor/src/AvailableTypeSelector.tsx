@@ -37,7 +37,7 @@ export const AvailableTypeSelector: StyledComponent<
   > button {
     text-align: center;
     min-height: 120px;
-    > i {
+    > span[role='img'] {
       display: block;
       font-size: 20px;
       margin: 0 0 10px 0;

@@ -108,14 +108,14 @@ export const WidgetDraggable: StyledComponent<React.FC<WidgetDraggableProps>, Ed
       display: inline-block;
       vertical-align: middle;
     }
-    i {
+    span[role='img'] {
       font-size: 16px;
       margin: 2px 5px 0 0;
     }
     a {
       color: ${props => props.theme['@gray-7']};
       line-height: 1;
-      &:hover i.delete-icon {
+      &:hover .delete-icon {
         color: ${props => props.theme['@red']};
       }
     }

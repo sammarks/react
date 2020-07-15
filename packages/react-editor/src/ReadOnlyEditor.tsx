@@ -70,7 +70,7 @@ export const ReadOnlyEditor: StyledComponent<React.FC<ReadOnlyEditorProps>, Edit
     align-items: center;
     justify-content: flex-end;
     margin-bottom: 10px;
-    > i {
+    > span[role='img'] {
       font-size: 16px;
       color: ${props => props.theme['@gray-4']};
       transition: color 0.1s linear;
