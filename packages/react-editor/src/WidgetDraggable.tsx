@@ -1,12 +1,12 @@
 import React, { useState, useContext, useCallback } from 'react'
 import { Draggable } from 'react-beautiful-dnd'
 import { Widget } from './Widget'
-import styled, { StyledComponent } from 'styled-components'
+import styled from 'styled-components'
 import classNames from 'classnames'
 import { Icon as LegacyIcon } from '@ant-design/compatible'
 import { Tooltip, Popconfirm } from 'antd'
 import { Dragger } from './Dragger'
-import { WidgetComponentProps, EditorTheme, Widget as WidgetType } from './types'
+import { WidgetComponentProps, Widget as WidgetType } from './types'
 import { EditorContext } from './EditorContext'
 
 interface WidgetDraggableProps extends WidgetComponentProps {
@@ -14,8 +14,14 @@ interface WidgetDraggableProps extends WidgetComponentProps {
   onDelete: (widget: WidgetType) => void
 }
 
-export const WidgetDraggable: StyledComponent<React.FC<WidgetDraggableProps>, EditorTheme> = styled(
-  ({ listId, onDelete, widget, className, ...widgetProps }) => {
+export const WidgetDraggable = styled(
+  ({
+    listId,
+    onDelete,
+    widget,
+    className,
+    ...widgetProps
+  }: WidgetDraggableProps & { className?: string }) => {
     const [actionsHovering, setActionsHovering] = useState(false)
     const [additionalActions, setAdditionalActions] = useState<React.ReactElement[]>([])
     const registerAction = useCallback(
@@ -61,7 +67,7 @@ export const WidgetDraggable: StyledComponent<React.FC<WidgetDraggableProps>, Ed
           <div
             ref={provided.innerRef}
             className={classNames({
-              [className]: true,
+              [className || '']: true,
               'actions-hover': actionsHovering,
             })}
             {...provided.draggableProps}

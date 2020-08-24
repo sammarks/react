@@ -1,6 +1,11 @@
 import React from 'react'
 import { WidgetComponents, WidgetType } from './types'
 
+export interface EditorCopy {
+  addWidget: string
+  noContentMessage: string
+}
+
 export interface IEditorContext {
   editorId: string
   movingWidgetId: string | null
@@ -9,6 +14,12 @@ export interface IEditorContext {
   widgetComponents: WidgetComponents
   readOnly?: boolean
   addTypes?: WidgetType[]
+  copy: EditorCopy
+}
+
+export const DEFAULT_COPY: EditorCopy = {
+  addWidget: 'Add Widget',
+  noContentMessage: 'No content yet!',
 }
 
 export const DefaultEditorContext: IEditorContext = {
@@ -18,6 +29,7 @@ export const DefaultEditorContext: IEditorContext = {
   moveItem: targetListId => false,
   widgetComponents: {},
   readOnly: false,
+  copy: DEFAULT_COPY,
 }
 
 export const EditorContext = React.createContext<IEditorContext>(DefaultEditorContext)

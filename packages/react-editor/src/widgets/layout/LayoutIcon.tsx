@@ -1,14 +1,13 @@
 import React from 'react'
-import styled, { StyledComponent } from 'styled-components'
+import styled from 'styled-components'
 import { LayoutWidgetColumn } from './types'
-import { EditorTheme } from '../../types'
 
 export interface LayoutIconProps {
   columns: LayoutWidgetColumn[]
 }
 
-export const LayoutIcon: StyledComponent<React.FC<LayoutIconProps>, EditorTheme> = styled(
-  ({ columns, className, style }) => (
+export const LayoutIcon = styled(
+  ({ columns, className, style }: LayoutIconProps & { className?: string; style?: any }) => (
     <div
       className={className}
       style={{

@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import { WidgetList } from './WidgetList'
 import { DefaultEditorContext, EditorContext } from './EditorContext'
 import FullScreen from 'react-full-screen'
-import styled, { StyledComponent } from 'styled-components'
+import styled from 'styled-components'
 import { Icon as LegacyIcon } from '@ant-design/compatible'
 import { Tooltip } from 'antd'
 import classNames from 'classnames'
-import { EditorTheme, Widgets, WidgetComponents } from './types'
+import { Widgets, WidgetComponents } from './types'
 import { DefaultWidgets } from './widgets'
 
 export interface ReadOnlyEditorProps {
@@ -15,14 +15,19 @@ export interface ReadOnlyEditorProps {
   customWidgets?: WidgetComponents
 }
 
-export const ReadOnlyEditor: StyledComponent<React.FC<ReadOnlyEditorProps>, EditorTheme> = styled(
-  ({ value, allowFullscreen, className, customWidgets = {} }) => {
+export const ReadOnlyEditor = styled(
+  ({
+    value,
+    allowFullscreen,
+    className,
+    customWidgets = {},
+  }: ReadOnlyEditorProps & { className?: string }) => {
     const [fullscreen, setFullscreen] = useState(false)
     return (
       <FullScreen enabled={fullscreen} onChange={setFullscreen}>
         <div
           className={classNames({
-            [className]: true,
+            [className || '']: true,
             'fullscreen-enabled': fullscreen,
           })}
         >

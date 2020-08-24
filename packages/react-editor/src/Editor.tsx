@@ -1,11 +1,11 @@
-import React, { FC, ReactElement, useState, useEffect, useMemo, useCallback } from 'react'
-import { EditorTheme, WidgetComponents, Widgets, WidgetType } from './types'
+import React, { ReactElement, useState, useEffect, useMemo, useCallback } from 'react'
+import { WidgetComponents, Widgets, WidgetType } from './types'
 import { OnDragEndResponder, DragDropContext } from 'react-beautiful-dnd'
 import { updateWidgetWeight } from './helpers/weights'
 import { Icon as LegacyIcon } from '@ant-design/compatible'
 import { Button } from 'antd'
-import styled, { StyledComponent } from 'styled-components'
-import { EditorContext } from './EditorContext'
+import styled from 'styled-components'
+import { DEFAULT_COPY, EditorContext, EditorCopy } from './EditorContext'
 import { DefaultWidgets } from './widgets'
 import { WidgetList } from './WidgetList'
 
@@ -20,9 +20,10 @@ export interface EditorProps {
   onChange: (value: Widgets) => void
   registerDropFunction?: RegisterDropFunction
   addTypes?: WidgetType[]
+  copy?: Partial<EditorCopy>
 }
 
-export const Editor: StyledComponent<FC<EditorProps>, EditorTheme> = styled(
+export const Editor = styled(
   ({
     onChange,
     customWidgets = {},
@@ -31,7 +32,8 @@ export const Editor: StyledComponent<FC<EditorProps>, EditorTheme> = styled(
     editorId,
     className,
     registerDropFunction,
-  }) => {
+    copy,
+  }: EditorProps & { className?: string }) => {
     const [movingWidgetId, setMovingWidgetId] = useState<string | null>(null)
     const rootGroupId = useMemo(() => `${editorId}-editor-root`, [editorId])
     const _onDragEnd: OnDragEndResponder = useCallback(
@@ -95,6 +97,10 @@ export const Editor: StyledComponent<FC<EditorProps>, EditorTheme> = styled(
           widgetComponents: {
             ...DefaultWidgets,
             ...customWidgets,
+          },
+          copy: {
+            ...DEFAULT_COPY,
+            ...copy,
           },
           addTypes,
         }}

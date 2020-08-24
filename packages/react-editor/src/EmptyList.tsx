@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Empty } from 'antd'
 import styled from 'styled-components'
+import { EditorContext } from './EditorContext'
 
-export const EmptyList = styled(({ className }) => (
-  <div className={className}>
-    <Empty description={'No content yet!'} />
-  </div>
-))`
+export const EmptyList = styled(({ className }) => {
+  const context = useContext(EditorContext)
+  return (
+    <div className={className}>
+      <Empty description={context.copy.noContentMessage} />
+    </div>
+  )
+})`
   min-height: 200px;
   display: flex;
   align-items: center;

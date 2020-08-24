@@ -1,6 +1,6 @@
-import React, { FC, ReactElement } from 'react'
-import { EditorTheme, WidgetType } from './types'
-import styled, { StyledComponent } from 'styled-components'
+import React, { ReactElement } from 'react'
+import { WidgetType } from './types'
+import styled from 'styled-components'
 import { Icon as LegacyIcon } from '@ant-design/compatible'
 import { Button } from 'antd'
 import isString from 'lodash/isString'
@@ -17,19 +17,18 @@ export interface AvailableTypeSelectorProps {
   onItemSelected: (type: WidgetType) => void
 }
 
-export const AvailableTypeSelector: StyledComponent<
-  FC<AvailableTypeSelectorProps>,
-  EditorTheme
-> = styled(({ className, items, onItemSelected }) => (
-  <div className={className}>
-    {items.map((item: AvailableType) => (
-      <Button key={item.type} onClick={() => onItemSelected(item.type)}>
-        {isString(item.icon) ? <LegacyIcon type={item.icon} /> : item.icon()}
-        <span>{item.label}</span>
-      </Button>
-    ))}
-  </div>
-))`
+export const AvailableTypeSelector = styled(
+  ({ className, items, onItemSelected }: AvailableTypeSelectorProps & { className?: string }) => (
+    <div className={className}>
+      {items.map((item: AvailableType) => (
+        <Button key={item.type} onClick={() => onItemSelected(item.type)}>
+          {isString(item.icon) ? <LegacyIcon type={item.icon} /> : item.icon()}
+          <span>{item.label}</span>
+        </Button>
+      ))}
+    </div>
+  ),
+)`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
