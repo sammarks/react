@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/sammarks/react/compare/@sammarks/react-editor@1.0.1...@sammarks/react-editor@1.1.0) (2020-08-24)
+
+
+### Features
+
+* allow overriding copy inside editor ([d7a5815](https://github.com/sammarks/react/commit/d7a5815ed87845e0b5fe394c001fd501b1f558e4))
+
+
+
+
+
 ## [1.0.1](https://github.com/sammarks/react/compare/@sammarks/react-editor@1.0.0...@sammarks/react-editor@1.0.1) (2020-07-15)
 
 
