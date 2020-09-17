@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.2](https://github.com/sammarks/react/compare/@sammarks/react-editor@1.1.1...@sammarks/react-editor@1.1.2) (2020-09-17)
+
+
+### Bug Fixes
+
+* remove local inclusion inside EditableWidgetDrawer ([c1e1d59](https://github.com/sammarks/react/commit/c1e1d59818424ca20f3d030db5f36322c1922e7f))
+
+
+
+
+
 ## [1.1.1](https://github.com/sammarks/react/compare/@sammarks/react-editor@1.1.0...@sammarks/react-editor@1.1.1) (2020-08-24)
 
 **Note:** Version bump only for package @sammarks/react-editor
