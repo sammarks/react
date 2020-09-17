@@ -1,10 +1,9 @@
 import React from 'react'
-import { confirmClose } from '@sammarks/react-confirm-close'
+import { confirmClose, ConfirmCloseComponentProps } from '@sammarks/react-confirm-close'
 import { Form } from '@ant-design/compatible'
 import { Button, Drawer } from 'antd'
 import { FormComponentProps } from '@ant-design/compatible/lib/form'
 import { DrawerProps } from 'antd/lib/drawer'
-import { ConfirmCloseComponentProps } from '../../../../react-confirm-close/src/types'
 import { WidgetComponentProps } from '../../types'
 
 export interface EditableWidgetDrawerProps extends WidgetComponentProps {
