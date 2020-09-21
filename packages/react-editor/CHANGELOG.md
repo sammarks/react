@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3](https://github.com/sammarks/react/compare/@sammarks/react-editor@1.1.2...@sammarks/react-editor@1.1.3) (2020-09-21)
+
+
+### Bug Fixes
+
+* onChange should not be required inside the editor ([1e842c9](https://github.com/sammarks/react/commit/1e842c98962f3e20f85a845f14642f53f106ab6c))
+
+
+
+
+
 ## [1.1.2](https://github.com/sammarks/react/compare/@sammarks/react-editor@1.1.1...@sammarks/react-editor@1.1.2) (2020-09-17)
 
 
