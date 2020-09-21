@@ -17,7 +17,7 @@ export interface EditorProps {
   value?: Widgets
   customWidgets?: WidgetComponents
   editorId: string
-  onChange: (value: Widgets) => void
+  onChange?: (value: Widgets) => void
   registerDropFunction?: RegisterDropFunction
   addTypes?: WidgetType[]
   copy?: Partial<EditorCopy>
@@ -48,24 +48,28 @@ export const Editor = styled(
             // Do nothing on purpose...
           }
           const weight = result.destination.index
-          onChange(
-            updateWidgetWeight(rootGroupId, value, id, {
-              parentId,
-              weight,
-            }),
-          )
+          if (onChange) {
+            onChange(
+              updateWidgetWeight(rootGroupId, value, id, {
+                parentId,
+                weight,
+              }),
+            )
+          }
         }
       },
       [value, rootGroupId],
     )
     const _onMoveItem = (targetListId: string) => {
       if (!movingWidgetId) return
-      onChange(
-        updateWidgetWeight(rootGroupId, value, movingWidgetId, {
-          parentId: targetListId,
-          weight: 0,
-        }),
-      )
+      if (onChange) {
+        onChange(
+          updateWidgetWeight(rootGroupId, value, movingWidgetId, {
+            parentId: targetListId,
+            weight: 0,
+          }),
+        )
+      }
       setMovingWidgetId(null)
     }
     useEffect(() => {
