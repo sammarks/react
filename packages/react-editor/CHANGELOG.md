@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/sammarks/react/compare/@sammarks/react-editor@1.2.0...@sammarks/react-editor@1.2.1) (2021-04-13)
+
+**Note:** Version bump only for package @sammarks/react-editor
+
+
+
+
+
 # [1.2.0](https://github.com/sammarks/react/compare/@sammarks/react-editor@1.1.3...@sammarks/react-editor@1.2.0) (2021-04-13)
 
 
