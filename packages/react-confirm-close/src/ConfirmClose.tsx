@@ -29,7 +29,7 @@ export const confirmClose = <TOriginalProps extends RequiredProps>({
           title: 'You have unsaved changes.',
           content: 'You will lose them if you continue. Are you sure you want to close this?',
           onOk: props.onClose,
-          width: 500,
+          width: 650,
           cancelText: 'Go Back & Keep Changes',
           okText: 'Continue Without Saving',
         })
