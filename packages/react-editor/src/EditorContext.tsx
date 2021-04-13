@@ -41,8 +41,7 @@ export const EditorValueContext = React.createContext<EditorValueContextValue | 
   undefined,
 )
 
-export function useEditorValueContext(): EditorValueContextValue | undefined
-export function useEditorValueContext(require: false): EditorValueContextValue | undefined
+export function useEditorValueContext(require?: false): EditorValueContextValue | undefined
 export function useEditorValueContext(require: true): EditorValueContextValue
 export function useEditorValueContext(require?: boolean): EditorValueContextValue | undefined {
   const context = React.useContext(EditorValueContext)
