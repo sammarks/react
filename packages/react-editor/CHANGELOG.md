@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/sammarks/react/compare/@sammarks/react-editor@1.1.3...@sammarks/react-editor@1.2.0) (2021-04-13)
+
+
+### Features
+
+* add new editor value context so widgets can be content-aware ([3b53c7c](https://github.com/sammarks/react/commit/3b53c7c8b953bcf39604d426148d827fc29437e3))
+
+
+
+
+
 ## [1.1.3](https://github.com/sammarks/react/compare/@sammarks/react-editor@1.1.2...@sammarks/react-editor@1.1.3) (2020-09-21)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.2](https://github.com/sammarks/react/compare/@sammarks/react-confirm-close@1.1.1...@sammarks/react-confirm-close@1.1.2) (2021-04-13)
+
+
+### Bug Fixes
+
+* increase width of unsaved changes warning modal ([d04f72a](https://github.com/sammarks/react/commit/d04f72a1a2940a9b87881e189b512ea7a5ec09e9))
+
+
+
+
+
 ## [1.1.1](https://github.com/sammarks/react/compare/@sammarks/react-confirm-close@1.1.0...@sammarks/react-confirm-close@1.1.1) (2020-08-24)
 
 **Note:** Version bump only for package @sammarks/react-confirm-close
