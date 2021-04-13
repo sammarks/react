@@ -11,6 +11,8 @@ import {
   EditableWidgetDrawerProps,
 } from './widgets/EditableWidget/EditableWidgetDrawer'
 
+export { EditorValueContext, EditorValueContextValue, useEditorValueContext } from './EditorContext'
+
 export {
   Editor,
   EditorProps,

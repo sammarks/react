@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { WidgetList } from './WidgetList'
-import { DefaultEditorContext, EditorContext } from './EditorContext'
+import { DefaultEditorContext, EditorContext, EditorValueContext } from './EditorContext'
 import FullScreen from 'react-full-screen'
 import styled from 'styled-components'
 import { Icon as LegacyIcon } from '@ant-design/compatible'
@@ -42,18 +42,20 @@ export const ReadOnlyEditor = styled(
                 </Tooltip>
               </div>
             )}
-            <EditorContext.Provider
-              value={{
-                ...DefaultEditorContext,
-                readOnly: true,
-                widgetComponents: {
-                  ...DefaultWidgets,
-                  ...customWidgets,
-                },
-              }}
-            >
-              <WidgetList widgets={value} onChange={() => false} />
-            </EditorContext.Provider>
+            <EditorValueContext.Provider value={{ widgets: value }}>
+              <EditorContext.Provider
+                value={{
+                  ...DefaultEditorContext,
+                  readOnly: true,
+                  widgetComponents: {
+                    ...DefaultWidgets,
+                    ...customWidgets,
+                  },
+                }}
+              >
+                <WidgetList widgets={value} onChange={() => false} />
+              </EditorContext.Provider>
+            </EditorValueContext.Provider>
           </div>
         </div>
       </FullScreen>

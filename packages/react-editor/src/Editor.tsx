@@ -5,7 +5,7 @@ import { updateWidgetWeight } from './helpers/weights'
 import { Icon as LegacyIcon } from '@ant-design/compatible'
 import { Button } from 'antd'
 import styled from 'styled-components'
-import { DEFAULT_COPY, EditorContext, EditorCopy } from './EditorContext'
+import { DEFAULT_COPY, EditorContext, EditorCopy, EditorValueContext } from './EditorContext'
 import { DefaultWidgets } from './widgets'
 import { WidgetList } from './WidgetList'
 
@@ -92,26 +92,28 @@ export const Editor = styled(
     }
 
     const content = (
-      <EditorContext.Provider
-        value={{
-          editorId,
-          movingWidgetId,
-          enableMoveMode: itemId => setMovingWidgetId(itemId),
-          moveItem: _onMoveItem,
-          widgetComponents: {
-            ...DefaultWidgets,
-            ...customWidgets,
-          },
-          copy: {
-            ...DEFAULT_COPY,
-            ...copy,
-          },
-          addTypes,
-        }}
-      >
-        <div className={className}>{cancelMove}</div>
-        <WidgetList onChange={onChange} widgets={value} id={rootGroupId} />
-      </EditorContext.Provider>
+      <EditorValueContext.Provider value={{ widgets: value }}>
+        <EditorContext.Provider
+          value={{
+            editorId,
+            movingWidgetId,
+            enableMoveMode: itemId => setMovingWidgetId(itemId),
+            moveItem: _onMoveItem,
+            widgetComponents: {
+              ...DefaultWidgets,
+              ...customWidgets,
+            },
+            copy: {
+              ...DEFAULT_COPY,
+              ...copy,
+            },
+            addTypes,
+          }}
+        >
+          <div className={className}>{cancelMove}</div>
+          <WidgetList onChange={onChange} widgets={value} id={rootGroupId} />
+        </EditorContext.Provider>
+      </EditorValueContext.Provider>
     )
 
     if (registerDropFunction) {
