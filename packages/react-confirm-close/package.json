@@ -1,6 +1,6 @@
 {
   "name": "@sammarks/react-confirm-close",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "main": "dist/react-confirm-close.es5.js",
   "typings": "dist/types/index.d.ts",
   "license": "MIT",

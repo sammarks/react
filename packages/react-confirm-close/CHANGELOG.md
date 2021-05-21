@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/sammarks/react/compare/@sammarks/react-confirm-close@1.1.2...@sammarks/react-confirm-close@1.2.0) (2021-05-21)
+
+
+### Features
+
+* upgrade to react 17 ([0e9f640](https://github.com/sammarks/react/commit/0e9f640262442be09f63b9939115de7472c2cd1f))
+
+
+
+
+
 ## [1.1.2](https://github.com/sammarks/react/compare/@sammarks/react-confirm-close@1.1.1...@sammarks/react-confirm-close@1.1.2) (2021-04-13)
 
 
