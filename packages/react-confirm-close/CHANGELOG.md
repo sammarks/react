@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/sammarks/react/compare/@sammarks/react-confirm-close@1.2.0...@sammarks/react-confirm-close@1.3.0) (2021-06-21)
+
+
+### Features
+
+* prevent navigation with the ConfirmClose dialog ([9894fcb](https://github.com/sammarks/react/commit/9894fcb2d501214dd803ac31c485760fc7fa8ee0))
+
+
+
+
+
 # [1.2.0](https://github.com/sammarks/react/compare/@sammarks/react-confirm-close@1.1.2...@sammarks/react-confirm-close@1.2.0) (2021-05-21)
 
 
