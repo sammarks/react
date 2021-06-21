@@ -7,6 +7,7 @@ import {
   ConfirmCloseConfig,
   RequiredProps,
 } from './types'
+import { Prompt } from 'react-router-dom'
 
 export const confirmClose = <TOriginalProps extends RequiredProps>({
   changeEvent = 'onChange',
@@ -46,6 +47,14 @@ export const confirmClose = <TOriginalProps extends RequiredProps>({
         if (props.onDirty) props.onDirty()
       },
     }
-    return <Component {...wrappedProps} />
+    return (
+      <>
+        <Prompt
+          when={isDirty}
+          message={'You will lose them if you continue. Are you sure you want to close this?'}
+        />
+        <Component {...wrappedProps} />
+      </>
+    )
   }
 }
